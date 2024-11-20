@@ -7,7 +7,7 @@ const Banner = () => {
   const [movie, setMovie] = useState({}); // State to hold a movie
 
   useEffect(() => {
-    const fetchMovie = async () => {
+    (async () => {
       try {
         const response = await instance.get(requests.fetchNetflixOriginals);
         const movies = response.data.results;
@@ -15,9 +15,9 @@ const Banner = () => {
       } catch (error) {
         console.error("Error:", error.response?.data || error.message);
       }
-    };
+    })()
 
-    fetchMovie(); // Call the async function inside useEffect
+     // Call the async function inside useEffect
   }, []);
 
   return (
@@ -37,7 +37,7 @@ const Banner = () => {
           </h1>
           <div className="banner_buttons">
             <button className="banner_button play">Play</button>
-            <button className="banner_button">My List</button>
+            <button className="banner_button list">My List</button>
           </div>
           {movie?.overview && (
             <h1 className="banner_description">
@@ -49,7 +49,7 @@ const Banner = () => {
         </div>
         <div className="banner_fadeBottom" />
       </div>
-      <h1>hello</h1>
+      
     </>
   );
 };
