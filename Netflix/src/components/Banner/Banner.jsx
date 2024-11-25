@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './Banner.css';
-import instance from "../../utils/Axios";
+import axios from "c:/Users/HP/Desktop/Evangadi/Phase-4/Netflix-Clone/Netflix/src/utils/axios";
 import requests from "../../utils/Requests";
 
 const Banner = () => {
-  const [movie, setMovie] = useState({}); // State to hold a movie
+  const [movie, setMovie] = useState({});
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await instance.get(requests.fetchNetflixOriginals);
+        const response = await axios.get(requests.fetchNetflixOriginals);
         const movies = response.data.results;
         setMovie(movies[Math.floor(Math.random() * movies.length)]);
       } catch (error) {
@@ -17,8 +17,7 @@ const Banner = () => {
       }
     })()
 
-     // Call the async function inside useEffect
-  }, []);
+   }, []);
 
   return (
     <>

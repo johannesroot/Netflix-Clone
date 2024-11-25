@@ -43,7 +43,7 @@ function Footer() {
               <li>Contact Us</li>
             </ul>
           </div>
-        </div>
+         </div>
         <div className="service_code">
           <p>
             Service Code

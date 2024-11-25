@@ -13,24 +13,24 @@ const RowList = () => {
       <Row
         title="Trending Now"
         fetchUrl={requests.fetchTrending}
-        isLargeRow={true}
+        
       />
        <Row
         title="Top Rated"
         fetchUrl={requests.fetchTopRatedMovies}
-        isLargeRow={true}
+         
       />
         <Row
         title="Action Movies"
         fetchUrl={requests.fetchActionMovies}
-        isLargeRow={true}
+        
       />
         <Row
         title="Comedy Movies"
         fetchUrl={requests.fetchComedyMovies}
-        isLargeRow={true}
+        
       />
-        <Row
+        {/* <Row
         title="Horror Movies"
         fetchUrl={requests.fetchHorrorMovies}
         isLargeRow={true}
@@ -49,7 +49,7 @@ const RowList = () => {
         title="Tv Show"
         fetchUrl={requests.fetchTvShow}
         isLargeRow={true}
-      />
+      /> */}
      
     </>
   );
